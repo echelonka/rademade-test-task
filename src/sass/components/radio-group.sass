@@ -1,0 +1,41 @@
+$md-radio-size: 15px
+$md-radio-checked-size: 11px
+
+.radio-group
+    margin: 15px 5px 15px 0
+    display: inline-block
+    input
+        visibility: hidden
+        position: absolute
+        &:checked + label:before
+            border-color: $shark
+            animation: ripple 0.2s linear forwards
+        &:checked + label:after
+            transform: scale(1)
+    label
+        height: $md-radio-size
+        padding: 0 ($md-radio-size + 10px)
+        display: inline-block
+        cursor: pointer
+        position: relative
+        margin-bottom: 0
+        vertical-align: bottom
+        &:before, &:after
+            position: absolute
+            content: ''
+            border-radius: 50%
+            transition: all .3s ease
+            transition-property: transform, border-color
+        &:before
+            width: $md-radio-size
+            height: $md-radio-size
+            left: 0
+            top: 0
+            border: 2px solid rgba($black, .54)
+        &:after
+            top: 4px
+            left: 4px
+            width: $md-radio-checked-size
+            height: $md-radio-checked-size
+            transform: scale(0)
+            background: $shark
